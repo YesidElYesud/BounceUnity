@@ -5,11 +5,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public float velocidad = 5f;
     public float fuerzaSalto = 12f;
-    private bool enSuelo;
-
-    public Transform detectorSuelo;
-    public float radioDeteccion = 0.2f;
-    public LayerMask capaSuelo;
 
     public int vidas = 3;
     public int puntos = 0;
@@ -55,15 +50,6 @@ public class PlayerController : MonoBehaviour
             puntos += 10;
             Debug.Log("Puntos: " + puntos);
             Destroy(collision.gameObject);
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (detectorSuelo != null)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawWireSphere(detectorSuelo.position, radioDeteccion);
         }
     }
 }
