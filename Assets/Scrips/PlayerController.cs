@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public float velocidad = 5f;
     public float fuerzaSalto = 12f;
 
+    public Transform ultimoCheckpoint; // Último checkpoint alcanzado
+
     public int vidas = 3;
     public int puntos = 0;
 
@@ -13,6 +15,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 2f; // Aumentamos un poco la gravedad para un salto más rápido
+        GameManager.instance.IniciarNivel(transform.position);
     }
 
       void Update()
@@ -30,25 +33,22 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Modificar OnTriggerEnter2D:
         if (collision.CompareTag("Checkpoint"))
         {
             Debug.Log("Pasaste un checkpoint");
+            ultimoCheckpoint = collision.transform; // Guardamos el checkpoint
         }
 
         if (collision.CompareTag("Enemigo"))
         {
-            vidas--;
-            Debug.Log("Perdiste una vida. Vidas restantes: " + vidas);
-            if (vidas <= 0)
-            {
-                Debug.Log("Game Over");
-            }
+            GameManager.instance.RestarVida();
         }
+
 
         if (collision.CompareTag("Anillo"))
         {
-            puntos += 10;
-            Debug.Log("Puntos: " + puntos);
+            GameManager.instance.SumarPuntos(10);
             Destroy(collision.gameObject);
         }
     }
