@@ -5,30 +5,47 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     public TextMeshProUGUI nivelText, anillosText, vidasText, puntosText;
-    private PlayerController jugador;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
     }
 
-    void Start()
+    private void Start()
     {
-        jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        ActualizarUI(); // Mostrar valores iniciales
     }
 
     public void ActualizarUI()
     {
-        nivelText.text = "Nivel: " + GameManager.Instance.nivelActual;
-        anillosText.text = "Anillos: " + GameManager.Instance.anillosRestantes;
-        vidasText.text = "Vidas: " + jugador.vidas;
-        puntosText.text = "Puntos: " + jugador.puntos;
+        if (GameManager.instance != null)
+        {
+            nivelText.text = "Nivel: " + GameManager.instance.nivelActual;
+            anillosText.text = "Anillos: " + GameManager.instance.anillosRestantes;
+            vidasText.text = "Vidas: " + GameManager.instance.vidas;
+            puntosText.text = "Puntos: " + GameManager.instance.puntaje;
+        }
     }
 
-    void Update()
+    public void OnVidasCambiadas()
     {
         ActualizarUI();
     }
-}
 
+    public void OnPuntosCambiados()
+    {
+        ActualizarUI();
+    }
+
+    public void OnAnillosCambiados()
+    {
+        ActualizarUI();
+    }
+
+    private void Update()
+    {
+        // Si deseas que se actualice cada frame:
+        // ActualizarUI();
+    }
+}

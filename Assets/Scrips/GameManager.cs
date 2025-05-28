@@ -1,43 +1,85 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
-    public int anillosRestantes;
-    public int nivelActual = 1;
+    public static GameManager instance;
 
-    void Awake()
+    public int vidas = 3;
+    public int puntaje = 0;
+    public int nivelActual = 1; // Nuevo: para mostrar nivel en UI
+    public int anillosRestantes = 0; // Nuevo: para mostrar anillos en UI
+
+    [HideInInspector]
+    public Vector3 puntoInicio;
+
+    private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    void Start()
+    public void IniciarNivel(Vector3 inicio)
     {
-        anillosRestantes = GameObject.FindGameObjectsWithTag("Anillo").Length;
-        UIManager.Instance.ActualizarUI();
+        puntoInicio = inicio;
     }
 
-    public void AnilloRecogido()
+    public void RestarVida()
     {
-        anillosRestantes--;
-        UIManager.Instance.ActualizarUI();
-        if (anillosRestantes <= 0)
-            PasarNivel();
+        vidas--;
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnVidasCambiadas();
+
+        if (vidas <= 0)
+        {
+            ReiniciarNivel();
+        }
+        else
+        {
+            RespawnJugador();
+        }
     }
 
-    public void PasarNivel()
+    public void SumarPuntos(int cantidad)
     {
-        nivelActual++;
-        // Aquí puedes cargar la siguiente escena o mostrar pantalla de nivel completado
-        SceneManager.LoadScene("Nivel" + nivelActual);
+        puntaje += cantidad;
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnPuntosCambiados();
     }
 
-    public void GameOver()
+    public void SumarAnillo()
     {
-        // Reiniciar el nivel o mostrar pantalla de fin
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        anillosRestantes++;
+        if (UIManager.Instance != null)
+            UIManager.Instance.OnAnillosCambiados();
+    }
+
+    private void RespawnJugador()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            PlayerController pc = player.GetComponent<PlayerController>();
+            if (pc != null && pc.ultimoCheckpoint != null)
+                player.transform.position = pc.ultimoCheckpoint.position;
+            else
+                player.transform.position = puntoInicio;
+
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+                rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    private void ReiniciarNivel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
