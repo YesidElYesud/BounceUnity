@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float velocidad = 5f;
+    public float velocidad = 8f;
     public float fuerzaSalto = 12f;
 
     public Transform ultimoCheckpoint; // Último checkpoint alcanzado

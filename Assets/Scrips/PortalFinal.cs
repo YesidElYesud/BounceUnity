@@ -4,20 +4,26 @@ using UnityEngine.SceneManagement;
 public class PortalFinal : MonoBehaviour
 {
     private bool portalActivo = false;
+    private SpriteRenderer spriteRenderer;
+    private Collider2D portalCollider; // Cambié el nombre para evitar conflicto
 
     void Start()
     {
-        // Inicialmente desactivado
-        gameObject.SetActive(false);
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        portalCollider = GetComponent<Collider2D>();
+
+        // Inicialmente desactivamos solo la parte visual y el collider
+        if (spriteRenderer != null) spriteRenderer.enabled = false;
+        if (portalCollider != null) portalCollider.enabled = false;
     }
 
     void Update()
     {
-        // Si los anillos restantes son 0 y el portal no está activo
         if (!portalActivo && GameManager.instance.anillosRestantes <= 0)
         {
             portalActivo = true;
-            gameObject.SetActive(true);
+            if (spriteRenderer != null) spriteRenderer.enabled = true;
+            if (portalCollider != null) portalCollider.enabled = true;
         }
     }
 
@@ -34,7 +40,6 @@ public class PortalFinal : MonoBehaviour
         int nivelActual = SceneManager.GetActiveScene().buildIndex;
         int siguienteNivel = nivelActual + 1;
 
-        // Asegúrate de tener más escenas configuradas en Build Settings
         if (siguienteNivel < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(siguienteNivel);

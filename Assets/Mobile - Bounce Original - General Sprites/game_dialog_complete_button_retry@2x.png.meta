@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      game_dialog_complete_button_retry@2x_0: 4613238360173603674
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -12,6 +12,9 @@ public class BurbujaVida : MonoBehaviour
 
             // Destruir la burbuja
             Destroy(gameObject);
+
+            // Actualizar UI
+            UIManager.Instance.ActualizarUI();
         }
     }
 }

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      game_dialog_complete_star_gray@2x_0: -4109240757284485815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dialog_iap3_button_cancel@2x_0: -4319271561578639369
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

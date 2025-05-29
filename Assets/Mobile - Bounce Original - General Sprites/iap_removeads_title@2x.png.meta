@@ -172,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      iap_removeads_title@2x_0: -5959292796339434622
+      iap_removeads_title@2x_1: 3723905338508131248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

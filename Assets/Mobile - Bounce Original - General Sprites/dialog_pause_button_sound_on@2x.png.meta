@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dialog_pause_button_sound_on@2x_0: 3861342879972369350
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

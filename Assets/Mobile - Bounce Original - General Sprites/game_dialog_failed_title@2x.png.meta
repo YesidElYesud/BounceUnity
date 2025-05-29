@@ -422,7 +422,19 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      game_dialog_failed_title@2x_0: 9093336765490458248
+      game_dialog_failed_title@2x_1: 6117159682746721509
+      game_dialog_failed_title@2x_10: 3079895208332439638
+      game_dialog_failed_title@2x_11: -7961276342556588077
+      game_dialog_failed_title@2x_2: -5666751135556951900
+      game_dialog_failed_title@2x_3: 1570911609075298080
+      game_dialog_failed_title@2x_4: 8253190844989990214
+      game_dialog_failed_title@2x_5: 1696068800132650470
+      game_dialog_failed_title@2x_6: -4173065277056438552
+      game_dialog_failed_title@2x_7: -5538275872119805885
+      game_dialog_failed_title@2x_8: -2753303473124028524
+      game_dialog_failed_title@2x_9: -5308166928753917718
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

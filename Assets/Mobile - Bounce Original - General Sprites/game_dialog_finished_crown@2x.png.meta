@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      game_dialog_finished_crown@2x_0: -1797537868674362145
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

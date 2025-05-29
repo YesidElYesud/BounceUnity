@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dialog_iap3_button_yes@2x_0: 5692344691039496526
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

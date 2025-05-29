@@ -997,7 +997,42 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dialog_iap3_title@2x_0: 1768997759699398487
+      dialog_iap3_title@2x_1: -8490536366699041807
+      dialog_iap3_title@2x_10: -7754686591636580703
+      dialog_iap3_title@2x_11: -357951546965223311
+      dialog_iap3_title@2x_12: 2527029875007648801
+      dialog_iap3_title@2x_13: -4416145191178905593
+      dialog_iap3_title@2x_14: 9152187494139036603
+      dialog_iap3_title@2x_15: -1571684281581545179
+      dialog_iap3_title@2x_16: 4646577519229859458
+      dialog_iap3_title@2x_17: 6088534310258247263
+      dialog_iap3_title@2x_18: 898779056691753989
+      dialog_iap3_title@2x_19: 8729892679569409031
+      dialog_iap3_title@2x_2: 3782653664934295993
+      dialog_iap3_title@2x_20: -5418169767596014809
+      dialog_iap3_title@2x_21: 8700424599014120211
+      dialog_iap3_title@2x_22: 1166946556777394113
+      dialog_iap3_title@2x_23: 803847848156050854
+      dialog_iap3_title@2x_24: 615195495137312943
+      dialog_iap3_title@2x_25: 8479640283008529546
+      dialog_iap3_title@2x_26: 580257637742647617
+      dialog_iap3_title@2x_27: 8321813300352045899
+      dialog_iap3_title@2x_28: -6926055130218288577
+      dialog_iap3_title@2x_29: 5107272213780461291
+      dialog_iap3_title@2x_3: 113699090573893800
+      dialog_iap3_title@2x_30: -6969131638647906422
+      dialog_iap3_title@2x_31: -8251997019632916475
+      dialog_iap3_title@2x_32: -2685964801565974174
+      dialog_iap3_title@2x_33: 3578608375240969107
+      dialog_iap3_title@2x_34: -7565746515097067986
+      dialog_iap3_title@2x_4: 4138480219819001233
+      dialog_iap3_title@2x_5: 572850306255057821
+      dialog_iap3_title@2x_6: 4568032915794426589
+      dialog_iap3_title@2x_7: -1461263061523473477
+      dialog_iap3_title@2x_8: 6663587574941229666
+      dialog_iap3_title@2x_9: -3120311964626893401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
